@@ -1,18 +1,38 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <main>
+    <px-header :links="links" />
+
+    <router-view class="container px-5 sm:px-20 py-20 flex-justify-center" />
+    <!-- Es un componente que nos permite establecer cual es el pedazo de HTML que se va a remplazar -->
+    <!-- Es decir que como en RaffYou, aquí va el codigo de la vista que se cambia -->
+  </main>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import PxHeader from "@/components/PxHeader";
 
 export default {
   name: "App",
-  components: {
-    HelloWorld,
-  },
+  components: { PxHeader },
+
+  data() {
+    return{
+      links: [
+        {
+          title: 'BTC',
+          to: { name: 'coin-detail', params: { id: 'bitcoin' } }
+        },
+        {
+          title: 'ETH',
+          to: { name: 'coin-detail', params: { id: 'ethereum' } }
+        },
+        {
+          title: 'XRP',
+          to: { name: 'coin-detail', params: { id: 'xrp' } }
+        }
+      ]
+    }
+  }
 };
 </script>
 
