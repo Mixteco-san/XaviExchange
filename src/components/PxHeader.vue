@@ -9,7 +9,7 @@
             class="font-semibold text-xl tracking-tight"
             :to="{ name: 'home' }"
           >
-            PlatziExchange
+            XaviiExchange
           </router-link>
         </div>
 
